@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+    Dona Maria Jose:
+-->
+<html lang="en">
+  <head>
+    <title>Web Mashup: Display House Prices on a Map</title>
+    <style>
+        body { 
+        padding-left: 2cm;
+        padding-top: 1cm;
+        padding-right: 2cm;
+        }
+        
+        #map {
+          width:50%;
+          float:left;
+          border:2px solid black;
+        }
+
+        #output{
+          width:40%;
+          float:right;
+        }
+    </style>
+
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="map.js"></script>
+    <script type="text/javascript"
+            src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDdihgJ80KNqkb96Y_3BLSg7LNxJ2l81fU'>
+    </script>
+  </head>
+
+  <body onload="initialize();" bgcolor="#F5F5DC">
+  <h1 align="center"> House Prices on a Map </h1>
+
+    <form>
+       <label>Enter address (use comma to separate address, city, state and pin to obtain proper result)  
+       <br><input type="text" id="address" size="70" /></label>
+       <input type="button" onclick="sendRequest();" value="Find"/>
+       <input type="button" onclick="clearData();" value="Clear"/>
+    </form>
+
+    <br>
+    <div id="map" style="width: 600px; height: 500px;" ></div><br/>
+    <table id="output" border="1">&nbsp;</table>
+  </body>
+</html>
